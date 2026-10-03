@@ -1,0 +1,7 @@
+{
+  "name": "SkillProof AI",
+  "description": "SkillProof AI - From skills to project readiness with adaptive assessments, aptitude academy, real code evaluation, and verified skill profiles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
