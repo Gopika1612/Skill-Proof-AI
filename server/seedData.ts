@@ -275,6 +275,102 @@ export const SEED_APTITUDE_QUESTIONS: AptitudeQuestion[] = [
     estimatedTimeSec: 50,
     placementRelevance: 'Product Companies, Deloitte, Accenture',
   },
+
+  // TCS NQT - Clocks & Angles
+  {
+    id: 'aq-tcs-clocks',
+    topicId: 'quant-time-speed-distance',
+    topicName: 'Time, Speed & Distance',
+    category: 'Quantitative',
+    subtopic: 'Clocks & Angles',
+    difficulty: 'medium',
+    question: 'What is the angle between the minute hand and the hour hand of a standard clock at 3:40?',
+    options: ['120°', '130°', '140°', '125°'],
+    correctAnswer: 1, // 130°
+    explanation: 'Formula for angle between hands: |30H - (11/2)M| = |30(3) - 5.5(40)| = |90 - 220| = 130°.',
+    estimatedTimeSec: 45,
+    placementRelevance: 'TCS NQT, Wipro Elite, Cognizant GenC',
+  },
+
+  // Infosys InfyTQ - Probability
+  {
+    id: 'aq-infy-prob',
+    topicId: 'quant-probability',
+    topicName: 'Probability & Combinatorics',
+    category: 'Quantitative',
+    subtopic: 'Simultaneous Events',
+    difficulty: 'medium',
+    question: 'Two fair standard dice are thrown simultaneously. What is the probability of getting a sum greater than or equal to 10?',
+    options: ['1/6', '1/9', '5/36', '1/4'],
+    correctAnswer: 0, // 1/6
+    explanation: 'Total sample space = 6 * 6 = 36. Favorable outcomes with sum >= 10: (4,6), (5,5), (5,6), (6,4), (6,5), (6,6) = 6 pairs. Probability = 6/36 = 1/6.',
+    estimatedTimeSec: 50,
+    placementRelevance: 'Infosys InfyTQ, Amazon, Accenture',
+  },
+
+  // Amazon SDE - Boats & Streams
+  {
+    id: 'aq-amz-boats',
+    topicId: 'quant-time-speed-distance',
+    topicName: 'Time, Speed & Distance',
+    category: 'Quantitative',
+    subtopic: 'Boats & Streams',
+    difficulty: 'hard',
+    question: 'A boat travels 24 km downstream in 2 hours and takes 4 hours to return the same distance upstream. What is the speed of the boat in still water?',
+    options: ['8 km/h', '9 km/h', '10 km/h', '6 km/h'],
+    correctAnswer: 1, // 9 km/h
+    explanation: 'Downstream velocity (D) = 24/2 = 12 km/h. Upstream velocity (U) = 24/4 = 6 km/h. Boat speed in still water = (D + U)/2 = (12 + 6)/2 = 9 km/h.',
+    estimatedTimeSec: 60,
+    placementRelevance: 'Amazon SDE, Goldman Sachs, TCS Digital',
+  },
+
+  // TCS NQT - Coded Direction Sense
+  {
+    id: 'aq-tcs-dir',
+    topicId: 'logic-coding-decoding',
+    topicName: 'Coding-Decoding',
+    category: 'Logical Reasoning',
+    subtopic: 'Direction & Displacement Sense',
+    difficulty: 'medium',
+    question: 'Rohan walks 15 meters North, turns right and walks 20 meters, then turns right again and walks 15 meters. Finally, he turns left and walks 10 meters. How far and in which direction is he now from his starting point?',
+    options: ['30 meters East', '25 meters North-East', '30 meters West', '20 meters East'],
+    correctAnswer: 0, // 30 meters East
+    explanation: 'Vertical displacement = 15m North - 15m South = 0. Horizontal displacement = 20m East + 10m East = 30m East.',
+    estimatedTimeSec: 45,
+    placementRelevance: 'TCS NQT, Cognizant GenC, Capgemini',
+  },
+
+  // Accenture / Cognizant - Circular Seating Arrangement
+  {
+    id: 'aq-acc-seat',
+    topicId: 'logic-seating-arrangement',
+    topicName: 'Seating Arrangements',
+    category: 'Logical Reasoning',
+    subtopic: 'Circular Facing Center',
+    difficulty: 'hard',
+    question: 'Six developers (A, B, C, D, E, F) sit in a circle facing the center. A is second to the left of C. B sits adjacent to neither A nor C. D is immediate right of A. Who sits directly opposite to A?',
+    options: ['E', 'B', 'F', 'C'],
+    correctAnswer: 1, // B
+    explanation: 'Fixing C at pos 1: A is 2nd left -> pos 5. D is immediate right of A -> pos 4. Since B cannot sit at pos 4, 6 (adjacent to A) or pos 2, 6 (adjacent to C), B must sit at pos 2, which is directly opposite pos 5 (A). Hence B is opposite A.',
+    estimatedTimeSec: 75,
+    placementRelevance: 'Accenture, Infosys, Tech Mahindra',
+  },
+
+  // Infosys - Alphanumeric Series
+  {
+    id: 'aq-infy-series',
+    topicId: 'logic-number-series',
+    topicName: 'Number & Letter Series',
+    category: 'Logical Reasoning',
+    subtopic: 'Alphanumeric Progression',
+    difficulty: 'easy',
+    question: 'Find the missing term in the sequence: B2D, E4H, H8L, K16P, ?',
+    options: ['N32T', 'M32S', 'N24T', 'O32U'],
+    correctAnswer: 0, // N32T
+    explanation: 'First letter advances by +3 (B->E->H->K->N). Middle number doubles (*2 -> 2, 4, 8, 16, 32). Last letter advances by +4 (D->H->L->P->T). Missing term = N32T.',
+    estimatedTimeSec: 35,
+    placementRelevance: 'Infosys, Wipro, TCS Ninja',
+  },
 ];
 
 export const SEED_CODING_CHALLENGES: CodingChallenge[] = [
@@ -410,6 +506,218 @@ INSERT INTO employees VALUES (5, 'Evan', 'Engineering', 105000);
       {
         input: 'DEFAULT_DB',
         expectedOutput: `[{"name":"Evan","salary":105000},{"name":"Alice","salary":95000},{"name":"Charlie","salary":88000}]`,
+      },
+    ],
+  },
+  {
+    id: 'code-max-subarray',
+    title: 'Maximum Subarray (Kadane’s Algorithm)',
+    slug: 'max-subarray-kadane',
+    difficulty: 'medium',
+    category: 'Dynamic Programming & Arrays',
+    relatedSkillIds: ['dsa-dp', 'dsa-arrays'],
+    description: 'Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum in O(n) time and O(1) space.\nPattern: Kadane’s Algorithm (Amazon, Google, Microsoft, TCS Digital).',
+    starterCode: {
+      javascript: `function maxSubArray(nums) {
+  let currentSum = nums[0];
+  let maxSum = nums[0];
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}`,
+      python: `def max_sub_array(nums):
+    current_sum = max_sum = nums[0]
+    for num in nums[1:]:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+    return max_sum`,
+    },
+    solutionStub: {
+      javascript: `maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])`,
+      python: `max_sub_array([-2, 1, -3, 4, -1, 2, 1, -5, 4])`,
+    },
+    testCases: [
+      { input: '[-2, 1, -3, 4, -1, 2, 1, -5, 4]', expectedOutput: '6' },
+      { input: '[1]', expectedOutput: '1' },
+      { input: '[5, 4, -1, 7, 8]', expectedOutput: '23' },
+      { input: '[-1, -2, -3]', expectedOutput: '-1', isHidden: true },
+    ],
+  },
+  {
+    id: 'code-valid-parentheses',
+    title: 'Valid Parentheses & Bracket Matching',
+    slug: 'valid-parentheses-stack',
+    difficulty: 'easy',
+    category: 'Stacks & String Parsing',
+    relatedSkillIds: ['dsa-stacks-queues', 'dsa-arrays'],
+    description: 'Given a string `s` containing just the characters \'(\', \')\', \'{\', \'}\', \'[\' and \']\', determine if the input string is valid.\nAn input string is valid if brackets close in the correct order.\nPattern: Monotonic Stack (Google, Adobe, Bloomberg, TCS Ninja).',
+    starterCode: {
+      javascript: `function isValid(s) {
+  const stack = [];
+  const pairs = { ')': '(', '}': '{', ']': '[' };
+  for (const char of s) {
+    if (char === '(' || char === '{' || char === '[') {
+      stack.push(char);
+    } else if (stack.pop() !== pairs[char]) {
+      return false;
+    }
+  }
+  return stack.length === 0;
+}`,
+      python: `def is_valid(s):
+    stack = []
+    pairs = {')': '(', '}': '{', ']': '['}
+    for char in s:
+        if char in '({[':
+            stack.append(char)
+        elif not stack or stack.pop() != pairs.get(char):
+            return False
+    return len(stack) == 0`,
+    },
+    solutionStub: {
+      javascript: `isValid("()[]{}")`,
+      python: `is_valid("()[]{}")`,
+    },
+    testCases: [
+      { input: '"()"', expectedOutput: 'true' },
+      { input: '"()[]{}"', expectedOutput: 'true' },
+      { input: '"(]"', expectedOutput: 'false' },
+      { input: '"([)]"', expectedOutput: 'false' },
+      { input: '"{[]}"', expectedOutput: 'true', isHidden: true },
+    ],
+  },
+  {
+    id: 'code-merge-intervals',
+    title: 'Merge Overlapping Intervals',
+    slug: 'merge-intervals-greedy',
+    difficulty: 'medium',
+    category: 'Interval Scheduling & Sorting',
+    relatedSkillIds: ['dsa-sorting-searching', 'dsa-arrays'],
+    description: 'Given an array of `intervals` where `intervals[i] = [start_i, end_i]`, merge all overlapping intervals and return an array of non-overlapping intervals.\nPattern: Interval Sorting & Greedy Merging (Google, Microsoft, Meta, Uber).',
+    starterCode: {
+      javascript: `function merge(intervals) {
+  if (!intervals.length) return [];
+  intervals.sort((a, b) => a[0] - b[0]);
+  const result = [intervals[0]];
+  for (let i = 1; i < intervals.length; i++) {
+    const last = result[result.length - 1];
+    if (intervals[i][0] <= last[1]) {
+      last[1] = Math.max(last[1], intervals[i][1]);
+    } else {
+      result.push(intervals[i]);
+    }
+  }
+  return result;
+}`,
+      python: `def merge_intervals(intervals):
+    if not intervals:
+        return []
+    intervals.sort(key=lambda x: x[0])
+    result = [intervals[0]]
+    for current in intervals[1:]:
+        last = result[-1]
+        if current[0] <= last[1]:
+            last[1] = max(last[1], current[1])
+        else:
+            result.append(current)
+    return result`,
+    },
+    solutionStub: {
+      javascript: `merge([[1, 3], [2, 6], [8, 10], [15, 18]])`,
+      python: `merge_intervals([[1, 3], [2, 6], [8, 10], [15, 18]])`,
+    },
+    testCases: [
+      { input: '[[1, 3], [2, 6], [8, 10], [15, 18]]', expectedOutput: '[[1, 6], [8, 10], [15, 18]]' },
+      { input: '[[1, 4], [4, 5]]', expectedOutput: '[[1, 5]]' },
+      { input: '[[1, 4], [2, 3]]', expectedOutput: '[[1, 4]]', isHidden: true },
+    ],
+  },
+  {
+    id: 'code-binary-search-range',
+    title: 'Search Range in Sorted Array',
+    slug: 'binary-search-range',
+    difficulty: 'medium',
+    category: 'Binary Search',
+    relatedSkillIds: ['dsa-sorting-searching'],
+    description: 'Given an array of integers `nums` sorted in non-decreasing order, find the starting and ending position of a given `target` value in O(log n) runtime. If target is not found, return [-1, -1].\nPattern: Modified Binary Search (Amazon, Meta, TCS Digital).',
+    starterCode: {
+      javascript: `function searchRange(nums, target) {
+  const findBound = (isFirst) => {
+    let left = 0, right = nums.length - 1, ans = -1;
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      if (nums[mid] === target) {
+        ans = mid;
+        if (isFirst) right = mid - 1;
+        else left = mid + 1;
+      } else if (nums[mid] < target) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+    return ans;
+  };
+  return [findBound(true), findBound(false)];
+}`,
+      python: `def search_range(nums, target):
+    def find_bound(is_first):
+        left, right, ans = 0, len(nums) - 1, -1
+        while left <= right:
+            mid = (left + right) // 2
+            if nums[mid] == target:
+                ans = mid
+                if is_first:
+                    right = mid - 1
+                else:
+                    left = mid + 1
+            elif nums[mid] < target:
+                left = mid + 1
+            else:
+                right = mid - 1
+        return ans
+    return [find_bound(True), find_bound(False)]`,
+    },
+    solutionStub: {
+      javascript: `searchRange([5, 7, 7, 8, 8, 10], 8)`,
+      python: `search_range([5, 7, 7, 8, 8, 10], 8)`,
+    },
+    testCases: [
+      { input: '[5, 7, 7, 8, 8, 10], 8', expectedOutput: '[3, 4]' },
+      { input: '[5, 7, 7, 8, 8, 10], 6', expectedOutput: '[-1, -1]' },
+      { input: '[], 0', expectedOutput: '[-1, -1]' },
+      { input: '[1], 1', expectedOutput: '[0, 0]', isHidden: true },
+    ],
+  },
+  {
+    id: 'code-sql-second-highest',
+    title: 'SQL: Second Highest Salary',
+    slug: 'sql-second-highest-salary',
+    difficulty: 'medium',
+    category: 'SQL & Database',
+    relatedSkillIds: ['db-sql', 'db-postgres'],
+    description: 'Write an SQL query to report the second highest salary from the Employee table. If there is no second highest salary, return null.\nPattern: Subquery / Window Function (Amazon, Uber, Oracle, Cognizant).',
+    sqlSchema: `
+CREATE TABLE employees (id INT, salary INT);
+INSERT INTO employees VALUES (1, 100);
+INSERT INTO employees VALUES (2, 200);
+INSERT INTO employees VALUES (3, 300);
+`,
+    starterCode: {
+      javascript: ``,
+      python: ``,
+      sql: `SELECT MAX(salary) AS second_highest FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);`,
+    },
+    solutionStub: {
+      javascript: ``,
+      python: ``,
+    },
+    testCases: [
+      {
+        input: 'DEFAULT_DB',
+        expectedOutput: `[{"second_highest":200}]`,
       },
     ],
   },

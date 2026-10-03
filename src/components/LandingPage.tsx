@@ -16,6 +16,9 @@ import {
   Compass,
   Laptop,
   Play,
+  BrainCircuit,
+  FileCheck2,
+  Zap,
 } from 'lucide-react';
 
 interface LandingPageProps {
@@ -50,6 +53,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
         {/* Center Nav Links */}
         <nav className="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
+          <a href="#" className="hover:text-white transition">Home</a>
           <a href="#how-it-works" className="hover:text-white transition">How It Works</a>
           <a href="#learning-paths" className="hover:text-white transition">Learning Paths</a>
           <a href="#placement" className="hover:text-white transition">Placement</a>
@@ -196,6 +200,11 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
       {/* Target Audiences: Students / Colleges / Companies */}
       <section id="learning-paths" className="px-4 md:px-8 py-12 max-w-6xl mx-auto w-full">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <span className="text-xs uppercase font-bold text-indigo-400 tracking-wider">Customized Curricula</span>
+          <h2 className="text-2xl md:text-3xl font-black text-white mt-1">Adaptive Learning Paths</h2>
+        </div>
+
         <div className="flex justify-center gap-2 mb-8">
           {(['students', 'colleges', 'companies'] as const).map((tab) => (
             <button
@@ -293,6 +302,117 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
           </div>
         )}
+      </section>
+
+      {/* Placement Section Anchor */}
+      <section id="placement" className="px-4 md:px-8 py-16 max-w-6xl mx-auto w-full border-t border-slate-800/80">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs uppercase font-bold text-purple-400 tracking-wider">Placement Acceleration</span>
+          <h2 className="text-2xl md:text-3xl font-black text-white mt-1">Campus & Product Placement Hub</h2>
+          <p className="text-xs md:text-sm text-slate-400 mt-2">
+            Integrated simulation covering every round: Quantitative, Logical, Coding tests, Core CS, and AI Interviewers.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="text-xl font-bold text-white mb-1">Aptitude Academy</div>
+            <p className="text-xs text-slate-400">R.S. Aggarwal inspired topics with automated Mistake Book</p>
+          </div>
+          <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="text-xl font-bold text-white mb-1">Coding Assessments</div>
+            <p className="text-xs text-slate-400">Real sandbox unit tests in Python, Node.js, and SQLite</p>
+          </div>
+          <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="text-xl font-bold text-white mb-1">Technical Core</div>
+            <p className="text-xs text-slate-400">OS, DBMS, SQL Window Functions, and Networks</p>
+          </div>
+          <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-center">
+            <div className="text-xl font-bold text-white mb-1">AI Mock Interview</div>
+            <p className="text-xs text-slate-400">Live evaluation on technical precision and problem solving</p>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <button
+            onClick={onStartLearning}
+            className="px-6 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs shadow-lg transition"
+          >
+            Practice Placement Tests Free
+          </button>
+        </div>
+      </section>
+
+      {/* For Colleges Section Anchor */}
+      <section id="for-colleges" className="px-4 md:px-8 py-16 max-w-6xl mx-auto w-full border-t border-slate-800/80">
+        <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/30 to-slate-900 border border-slate-800">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="text-xs uppercase font-bold text-indigo-400">Institutional Partnership</span>
+              <h2 className="text-2xl font-black text-white mt-1 mb-2">
+                For Colleges & Universities: Department-Wide Skill Proof
+              </h2>
+              <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-4">
+                Empower your faculty with objective skill attainment tracking. Replace subjective resumes with verified code submissions, aptitude accuracy metrics, and capstone verifications mapped to accreditation requirements.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-slate-300">
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Year 1–4 Curricula</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> Automated Mock Drives</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-emerald-400" /> NIRF Evidence Reports</span>
+              </div>
+            </div>
+            <button
+              onClick={onStartLearning}
+              className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs whitespace-nowrap shadow-lg transition"
+            >
+              Sign Up as Faculty / College
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* For Companies Section Anchor */}
+      <section id="for-companies" className="px-4 md:px-8 py-16 max-w-6xl mx-auto w-full border-t border-slate-800/80">
+        <div className="p-8 rounded-2xl bg-gradient-to-r from-slate-900 via-purple-950/30 to-slate-900 border border-slate-800">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="text-xs uppercase font-bold text-purple-400">Enterprise Engineering</span>
+              <h2 className="text-2xl font-black text-white mt-1 mb-2">
+                For Companies: Project Readiness & Capability Matrix
+              </h2>
+              <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-4">
+                Define required skills for upcoming projects (e.g. AI Customer Support Platform). Automatically detect team skill gaps, assign targeted upskilling sprints, and verify project readiness before day one of development.
+              </p>
+              <div className="flex flex-wrap gap-4 text-xs text-slate-300">
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-purple-400" /> Individual Gap Adaptation</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-purple-400" /> Ready/Developing/Gap Ratings</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-purple-400" /> Targeted Training Sprints</span>
+              </div>
+            </div>
+            <button
+              onClick={() => loginAsDemo('usr-admin-1')}
+              className="px-6 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs whitespace-nowrap shadow-lg transition"
+            >
+              Launch Company Admin Demo
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section Anchor */}
+      <section id="about" className="px-4 md:px-8 py-16 max-w-6xl mx-auto w-full border-t border-slate-800/80 text-center">
+        <span className="text-xs uppercase font-bold text-indigo-400 tracking-wider">Our Mission</span>
+        <h2 className="text-2xl md:text-3xl font-black text-white mt-1 mb-4">
+          Eliminating Guesswork from Engineering Capabilities
+        </h2>
+        <p className="text-xs md:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed mb-8">
+          SkillProof AI was founded on a simple insight: traditional resumes and video-watching certificates do not prove job readiness. By connecting real code execution, dynamic aptitude, and evidence-backed capstones into one adaptive platform, we ensure every student and engineer can prove what they build.
+        </p>
+
+        <div className="inline-flex items-center gap-3 p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300">
+          <ShieldCheck className="w-5 h-5 text-indigo-400" />
+          <span>Every score in SkillProof AI is backed by an immutable ledger of real test cases and executions.</span>
+        </div>
       </section>
 
       {/* Demo Persona Access Footer */}
